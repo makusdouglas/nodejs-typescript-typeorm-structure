@@ -1,0 +1,29 @@
+{
+    "type": "mssql",
+    "host": "localhost",
+    "port": 1433,
+    "username": "nodejs-mssql",
+    "password": "mssql_SERVER_2021",
+    "database": "TEST_TYPEORM",
+    "extra": {
+        "driver": "mssql",
+        "options": {
+            "trustedConnection": true
+        }
+    },
+    "connectionTimeout": 30000,
+    "logging": false,
+    "entities": [
+       "src/app/models/*.ts"
+    ],
+    "migrations": [
+       "src/database/migration/*.ts"
+    ],
+    "subscribers": [
+       "src/database/subscriber/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/app/models",
+        "migrationsDir": "src/database/migration"
+    }
+ }

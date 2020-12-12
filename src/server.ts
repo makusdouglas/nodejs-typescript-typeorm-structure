@@ -1,10 +1,5 @@
-import express from 'express'
-import '@controllers/UsersController'
+import server from './app'
 
-const app = express()
-
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' })
+server.listen(3333).on('listening', () => {
+  console.log('NODE SERVER STARTED')
 })
-
-app.listen(3333)

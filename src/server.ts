@@ -1,5 +1,5 @@
 import server from './app'
 
-server.listen(3333).on('listening', () => {
-  console.log('NODE SERVER STARTED')
+server.listen(process.env.APP_PORT).on('listening', () => {
+  console.log('NODE SERVER STARTED IN', process.env.APP_PORT)
 })

@@ -17,13 +17,13 @@
        "src/app/models/*.ts"
     ],
     "migrations": [
-       "src/database/migration/*.ts"
+       "src/database/migrations/*.ts"
     ],
     "subscribers": [
        "src/database/subscriber/*.ts"
     ],
     "cli": {
         "entitiesDir": "src/app/models",
-        "migrationsDir": "src/database/migration"
+        "migrationsDir": "src/database/migrations"
     }
  }

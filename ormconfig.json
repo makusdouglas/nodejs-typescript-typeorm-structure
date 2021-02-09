@@ -1,16 +1,10 @@
 {
-    "type": "mssql",
+    "type": "mysql",
     "host": "localhost",
-    "port": 1433,
-    "username": "nodejs-mssql",
-    "password": "mssql_SERVER_2021",
-    "database": "TEST_TYPEORM",
-    "extra": {
-        "driver": "mssql",
-        "options": {
-            "trustedConnection": true
-        }
-    },
+    "port": 3306,
+    "username": "root",
+    "password": "mysql_database",
+    "database": "STORE_APP",
     "connectionTimeout": 30000,
     "logging": false,
     "entities": [

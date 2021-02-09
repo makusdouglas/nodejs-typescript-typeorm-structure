@@ -1,12 +1,8 @@
-import UsersController from '@controllers/UsersController'
-import { Request, Response, Router } from 'express'
-const routes = Router()
+import UsersController from '@controllers/UsersController';
+import { Request, Response, Router } from 'express';
+import userRouter from './userRouter';
+const routes = Router();
 
-routes.get('/', (req:Request, res:Response) => {
-  return res.json({ message: 'Hello World' })
-})
-routes.post('/users/register', UsersController.store)
+routes.use('/users', userRouter);
 
-routes.get('/users', UsersController.index)
-
-export default routes
+export default routes;

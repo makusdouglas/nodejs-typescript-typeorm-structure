@@ -27,6 +27,7 @@ class UsersController {
         message: `User ${userExists.email} already exists`,
       });
     }
+
     const user = new User();
     user.email = email;
     user.password = password;

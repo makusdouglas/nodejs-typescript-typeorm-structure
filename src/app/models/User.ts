@@ -11,7 +11,7 @@ import {
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';
-import { Role } from './Role';
+import Role from './Role';
 import { IsDate, IsEmail } from 'class-validator';
 
 @Entity('user')
@@ -72,9 +72,9 @@ class User {
   /**
    * ----------
    */
-  @ManyToMany((type) => Role, { eager: true })
+  @ManyToMany((type) => Role, { eager: true, cascade: true })
   @JoinTable()
-  roles: Role;
+  roles: Role[];
 }
 
 export default User;

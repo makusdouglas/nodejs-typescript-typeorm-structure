@@ -1,4 +1,4 @@
-import { Interface } from 'readline';
+import { IsUppercase, IsLowercase, IsNotEmpty } from 'class-validator';
 import {
   Column,
   CreateDateColumn,
@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 
 @Entity('Permission')
-export class Permission {
+class Permission {
   @PrimaryGeneratedColumn({
     type: 'integer',
   })
@@ -18,11 +18,21 @@ export class Permission {
   @Column({
     type: 'varchar',
   })
-  name: string;
+  @IsUppercase()
+  @IsNotEmpty()
+  module: string;
 
   @Column({
     type: 'varchar',
   })
+  @IsUppercase()
+  @IsNotEmpty()
+  type: 'CREATE' | 'UPDATE' | 'DELETE' | 'VIEW';
+
+  @Column({
+    type: 'varchar',
+  })
+  @IsLowercase()
   description: string;
 
   @CreateDateColumn({ name: 'created_at' })
@@ -31,3 +41,4 @@ export class Permission {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 }
+export default Permission;

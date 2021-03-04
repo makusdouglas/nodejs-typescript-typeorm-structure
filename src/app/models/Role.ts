@@ -1,4 +1,4 @@
-import { IsLowercase, IsUppercase } from 'class-validator';
+import { IsLowercase, IsNotEmpty, IsUppercase } from 'class-validator';
 import {
   Column,
   CreateDateColumn,
@@ -8,10 +8,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Permission } from './Permission';
+import Permission from './Permission';
 
 @Entity('Role')
-export class Role {
+class Role {
   @PrimaryGeneratedColumn({
     type: 'integer',
   })
@@ -21,6 +21,7 @@ export class Role {
     type: 'varchar',
   })
   @IsUppercase()
+  @IsNotEmpty()
   name: string;
 
   @Column({
@@ -40,7 +41,8 @@ export class Role {
    * --------------------
    */
 
-  @ManyToMany((type) => Permission, { eager: true })
+  @ManyToMany((type) => Permission, { eager: true, cascade: true })
   @JoinTable()
-  permissions: Permission;
+  permissions: Permission[];
 }
+export default Role;

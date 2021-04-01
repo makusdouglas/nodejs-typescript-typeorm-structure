@@ -4,7 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: 'current'
+          node: '14'
         }
       }
     ],
@@ -20,7 +20,10 @@ module.exports = {
         '@lib': './src/lib',
         '@database': './src/database'
       }
-    }]
+    }],
+    ["@babel/plugin-transform-flow-strip-types"],
+    ["@babel/plugin-proposal-decorators", { "legacy": true}],
+    ["@babel/plugin-proposal-class-properties", { "loose": true}]
   ],
   ignore: [
     '**/*.spec.ts'

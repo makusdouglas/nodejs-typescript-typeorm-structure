@@ -23,17 +23,18 @@ class User {
 
   @Column({
     unique: true,
+    type: 'varchar',
   })
   @IsEmail()
   email: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, type: 'varchar' })
   firstname: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, type: 'varchar' })
   lastname: string;
 
-  @Column()
+  @Column('date')
   @IsDate()
   birth: Date;
 

@@ -1,0 +1,1 @@
+docker run -p 3333:3333 -d nodets/appstoque

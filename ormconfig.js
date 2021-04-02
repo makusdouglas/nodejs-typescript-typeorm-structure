@@ -2,14 +2,13 @@
 require('dotenv')
 const dir = process.env.ENV === 'production'? 'dist': 'src';
 const ext = process.env.ENV === 'production'? '.js': '.ts';
-console.log(process.env.ENV);
 module.exports={
     "type": "mysql",
-    "host": process.env.IP,
-    "port": 3306,
-    "username": "root",
-    "password": "mysql_database",
-    "database": "STORE_APP",
+    "host": process.env.MYSQL_HOST,
+    "port":  3306,
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASS,
+    "database": process.env.MYSQL_DB,
     "connectionTimeout": 30000,
     "logging": false,
     "entities": [

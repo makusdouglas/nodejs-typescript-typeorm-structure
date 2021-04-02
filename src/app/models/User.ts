@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
   ManyToMany,
   JoinTable,
+  BaseEntity,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';
@@ -15,7 +16,7 @@ import Role from './Role';
 import { IsDate, IsEmail } from 'class-validator';
 
 @Entity('user')
-class User {
+class User extends BaseEntity {
   @PrimaryColumn({
     type: 'varchar',
   })
@@ -53,6 +54,12 @@ class User {
   // Functions
   public isPasswordCorrect(password) {
     return bcrypt.compareSync(password, this.passwordhash);
+  }
+
+  public static findByEmail(email: string) {
+    return this.createQueryBuilder('user')
+      .where('user.email = :email', { email })
+      .getOne();
   }
 
   // Hoooks

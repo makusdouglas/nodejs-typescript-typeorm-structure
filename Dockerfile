@@ -1,13 +1,14 @@
-FROM node:14
+FROM node:14.15.4-alpine3.12
 
-WORKDIR /usr/app
 
-COPY package*.json ./
+WORKDIR /home/node/app
 
-RUN npm install
+RUN chown node:node /home/node/app
 
-COPY . .
+USER node
+
+COPY --chown=node:node . .
 
 EXPOSE 3333
 
-CMD ["npm", "run", "dev"]
+ENTRYPOINT [ ".docker/entrypoint.sh" ]

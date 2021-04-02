@@ -1,10 +1,44 @@
-version: '3'
+#!/bin/sh
+version: '3.8'
 
 services:
-  app:
-    build: .
-    command: npm run dev
+  mysqldb:
+    image: mysql
+    networks:
+      - backend
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: appnode
+      MYSQL_PASSWORD: mypassword
+      MYSQL_DATABASE: STORE_APP
+    container_name: store-app-db
+    ports:
+      - 3306:3306
+
+  nodejs:
+    build:
+      context: .
+    image: makusdouglas/store-app-backend
+    depends_on:
+      - mysqldb
+    networks:
+      - backend
+    environment:
+      MYSQL_HOST: store-app-db
+      MYSQL_USER: appnode
+      MYSQL_PASS: mypassword
+      MYSQL_DB: STORE_APP
+    volumes:
+      - .:/home/node/app
     ports:
       - '3333:3333'
-    volumes:
-      - .:/user/app
+    container_name: store-app-backend
+    restart: always
+    stdin_open: true
+    tty: true
+    # command: ['npm', 'install', '&&', 'npm', 'run', 'dev']
+    # links:
+    #   - link-mysql
+
+networks:
+  backend:

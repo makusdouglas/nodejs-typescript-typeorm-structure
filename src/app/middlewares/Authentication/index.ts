@@ -41,7 +41,6 @@ class AuthenticationStore {
       iat: moment().unix(),
       exp: moment().add(6, 'hours').unix(),
     };
-    console.log(process.env.JWT_SECRET);
     return jwt.sign(payload, process.env.JWT_SECRET);
   }
 
@@ -57,9 +56,7 @@ class AuthenticationStore {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       console.log('DECODED TOKEN', decoded);
       return decoded;
-    } catch (error) {
-      console.log('[ERROR WHEN DECODE JWT]', error);
-    }
+    } catch (error) {}
   }
 
   static bearer(token: string) {

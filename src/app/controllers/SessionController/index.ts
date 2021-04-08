@@ -9,6 +9,8 @@ class SessionController {
     const { email: e_mail, password } = req.body;
 
     const user = await User.findByEmail(e_mail);
+    console.log(user);
+
     if (!isNotEmptyObject(user)) {
       return res.status(401).json({
         error: true,

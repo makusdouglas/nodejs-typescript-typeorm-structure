@@ -57,8 +57,9 @@ class User extends BaseEntity {
   }
 
   public static findByEmail(email: string) {
-    return this.createQueryBuilder('user')
-      .where('user.email = :email', { email })
+    return this.createQueryBuilder('User')
+      .where('User.email = :email', { email })
+      .leftJoinAndSelect('User.roles', 'Role')
       .getOne();
   }
 

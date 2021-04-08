@@ -4,10 +4,10 @@ import AuthenticationStore from 'src/app/middlewares/Authentication';
 const roleRouter = Router();
 
 roleRouter.use(AuthenticationStore.authenticate);
-roleRouter.post('/', RolesController.store);
-roleRouter.get('/', RolesController.index);
+roleRouter.post('/', RolesController._create);
+roleRouter.get('/', RolesController._show);
 // roleRouter.get('/:id', RolesController.indexOne);
-// roleRouter.patch('/:id', RolesController.update);
-// roleRouter.delete('/:id', RolesController.remove);
+roleRouter.patch('/:id', RolesController._update);
+roleRouter.delete('/:id', RolesController._destroy);
 
 export default roleRouter;

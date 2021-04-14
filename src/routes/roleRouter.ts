@@ -1,6 +1,6 @@
 import RolesController from '@controllers/RolesController';
+import AuthenticationStore from '@middlewares/Authentication';
 import { Router } from 'express';
-import AuthenticationStore from 'src/app/middlewares/Authentication';
 const roleRouter = Router();
 
 roleRouter.use(AuthenticationStore.authenticate);

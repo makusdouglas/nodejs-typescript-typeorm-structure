@@ -1,8 +1,6 @@
 /** @format */
 
 import jwt from 'jsonwebtoken';
-import fs from 'fs';
-import path from 'path';
 import moment from 'moment';
 import { NextFunction, Request, Response } from 'express';
 import User from '@models/User';

@@ -1,5 +1,4 @@
-import UsersController from '@controllers/UsersController';
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
 import userRouter from './userRouter';
 import roleRouter from './roleRouter';
 import sessionRouter from './sessionRouter';

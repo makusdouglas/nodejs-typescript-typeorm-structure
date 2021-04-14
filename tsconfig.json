@@ -19,7 +19,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@controllers/*": ["src/app/controllers/*"],
+      "@controllers/*": ["./src/app/controllers/*"],
+      "@middlewares/*": ["./src/app/middlewares/*"],
       "@models/*": ["./src/app/models/*"],
       "@views/*": ["./src/app/views/*"],
       "@config/*": ["./src/config/*"],

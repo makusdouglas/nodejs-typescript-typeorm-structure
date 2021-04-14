@@ -1,7 +1,7 @@
+import AuthenticationStore from '@middlewares/Authentication';
 import User from '@models/User';
 import { arrayNotEmpty, isNotEmptyObject } from 'class-validator';
 import { Request, Response } from 'express';
-import AuthenticationStore from 'src/app/middlewares/Authentication';
 import { getRepository } from 'typeorm';
 
 class SessionController {

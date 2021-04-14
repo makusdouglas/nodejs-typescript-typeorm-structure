@@ -4,7 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: '14'
+          node: 'current'
         }
       }
     ],
@@ -13,14 +13,15 @@ module.exports = {
   plugins: [
     ['module-resolver', {
       alias: {
-        '@config': './src/config',
-        '@models': './src/app/models',
         '@controllers': './src/app/controllers',
+        '@middlewares': './src/app/middlewares',
+        '@models': './src/app/models',
         '@views': './src/app/views',
+        '@config': './src/config',
         '@lib': './src/lib',
         '@database': './src/database'
       }
-    }],
+      }],
     ["@babel/plugin-transform-flow-strip-types"],
     ["@babel/plugin-proposal-decorators", { "legacy": true}],
     ["@babel/plugin-proposal-class-properties", { "loose": true}]

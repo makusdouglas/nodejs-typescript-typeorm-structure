@@ -1,7 +1,7 @@
 import UserRolesController from '@controllers/UserRolesController';
 import UsersController from '@controllers/UsersController';
+import AuthenticationStore from '@middlewares/Authentication';
 import { Router } from 'express';
-import AuthenticationStore from 'src/app/middlewares/Authentication';
 const userRouter = Router();
 
 userRouter.post('/register', UsersController.store);

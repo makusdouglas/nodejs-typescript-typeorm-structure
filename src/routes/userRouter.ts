@@ -8,6 +8,7 @@ userRouter.post('/register', UsersController.store);
 // Aply Authentication Middleware
 userRouter.use(AuthenticationStore.authenticate);
 userRouter.get('/', UsersController.index);
+userRouter.get('/me', UsersController.indexOne);
 userRouter.get('/:id', UsersController.indexOne);
 userRouter.patch('/:id', UsersController.update);
 userRouter.delete('/:id', UsersController.remove);

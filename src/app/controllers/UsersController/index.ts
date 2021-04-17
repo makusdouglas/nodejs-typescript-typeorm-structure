@@ -62,7 +62,8 @@ class UsersController {
   }
 
   async indexOne(req: Request, res: Response) {
-    const { id } = req.params;
+    const id = req.params.id || req.userId;
+
     if (id === null || id === '') {
       return res
         .status(401)
@@ -70,7 +71,25 @@ class UsersController {
     }
     try {
       const repo = await getRepository(User).findOneOrFail(id);
-      return res.status(200).json(repo);
+      const {
+        firstname,
+        lastname,
+        roles,
+        birth,
+        email,
+        createdAt,
+        updatedAt,
+      } = repo;
+      return res.status(200).json({
+        id,
+        email,
+        firstname,
+        lastname,
+        birth,
+        createdAt,
+        updatedAt,
+        roles,
+      });
     } catch (err) {
       return res.status(400).json(err);
     }

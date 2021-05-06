@@ -1,0 +1,595 @@
+_type: export
+__export_format: 4
+__export_date: 2021-05-06T05:00:03.396Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_cbcebcb5796540e6bc3483728958a3df
+    parentId: fld_7e5f36cc054e43ebaf6e93707bda8ed6
+    modified: 1620181608602
+    created: 1620181573197
+    url: "{{ _.baseUrl }}/roles/dc1c2c8a-7121-4af4-906a-d18f5f07863a/permission/5"
+    name: createRelation
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a39b8d051092456cab40f915b10d2637
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1617556621524.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_7e5f36cc054e43ebaf6e93707bda8ed6
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1620181554144
+    created: 1620181554144
+    name: Role>Permissions
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620181554144
+    _type: request_group
+  - _id: wrk_48cfa42919a84731895390dd3672e167
+    parentId: null
+    modified: 1612839067394
+    created: 1612839067394
+    name: APP_ESTOQUE TypeOrm
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_1666a099a90c403c91e5059947a57ff4
+    parentId: fld_257c7cc56c3d478bb07c5089a3b07718
+    modified: 1620180478226
+    created: 1617749800871
+    url: "{{ _.baseUrl }}/users/dc1c2c8a-7121-4af4-906a-d18f5f07863a/role/5"
+    name: createRelation
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a39b8d051092456cab40f915b10d2637
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1617749800871
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_257c7cc56c3d478bb07c5089a3b07718
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1617749790885
+    created: 1617749790885
+    name: User>Role
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1617749790885
+    _type: request_group
+  - _id: req_24bf54343b96405ea8dba26aadd6803f
+    parentId: fld_257c7cc56c3d478bb07c5089a3b07718
+    modified: 1620181248811
+    created: 1617755012470
+    url: "{{ _.baseUrl }}/users/dc1c2c8a-7121-4af4-906a-d18f5f07863a/role/5"
+    name: removeRelation
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a39b8d051092456cab40f915b10d2637
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1617363442177.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3b0b14ac862c4b229730790c41d02260
+    parentId: fld_89699b7d28bb45e1b0d75980aabe2484
+    modified: 1617350292255
+    created: 1617342894304
+    url: "{{ _.baseUrl }}/sessions"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "makusdouglas@email.com",
+        	"password": "password"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_aa32b73f2b98402cb4afed6c9906f2f1
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612753903784.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_89699b7d28bb45e1b0d75980aabe2484
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1617342868324
+    created: 1617342868324
+    name: Sessions
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1617342868324
+    _type: request_group
+  - _id: req_e9f261a244d3448c8b81292c342ed012
+    parentId: fld_56aa2efd08f749c19933dde4a1a161ab
+    modified: 1620183029263
+    created: 1620182915236
+    url: "{{ _.baseUrl }}/permissions"
+    name: listAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1620182915236
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_56aa2efd08f749c19933dde4a1a161ab
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1620182901888
+    created: 1620182897692
+    name: Permissions
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1616087313840.5
+    _type: request_group
+  - _id: req_4bf818636b054bf2b5e8a826e4af04cb
+    parentId: fld_56aa2efd08f749c19933dde4a1a161ab
+    modified: 1620271319386
+    created: 1620183043771
+    url: "{{ _.baseUrl }}/permissions"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"module": "CADASTRO DE PRODUTOS",
+        	"description": "modulo responsável pelo cadastro de produtos",
+        	"type": "INSERT"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_26b5c4b8c4ad4970883f105b87083bbc
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1618966358053.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5e4242c8ce3d4765b38dc982d1de6936
+    parentId: fld_56aa2efd08f749c19933dde4a1a161ab
+    modified: 1620276481115
+    created: 1620272141104
+    url: "{{ _.baseUrl }}/permissions/2"
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"module": "CADASTRO DE PRODUTOS",
+        	"description": "modulo responsável pelo cadastro de produtos",
+        	"type": "INSERT"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1618966358003.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cf67b6b07dd7464fbe0e21083426a405
+    parentId: fld_56aa2efd08f749c19933dde4a1a161ab
+    modified: 1620276618663
+    created: 1620272147983
+    url: "{{ _.baseUrl }}/permissions/1"
+    name: delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1618966357953.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_76b3c97b7f4d41c3971113efd480e399
+    parentId: fld_35e40795262f4f24a6a24c8fab4f30ec
+    modified: 1617754168552
+    created: 1614831777050
+    url: "{{ _.baseUrl }}/roles"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"name": "CONFERENTE",
+        	"description": "usuario responsável por receber mercadoria, conferir e lançar no sistema"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1614831777050
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_35e40795262f4f24a6a24c8fab4f30ec
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1614831759357
+    created: 1614831759357
+    name: Roles
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614831759357
+    _type: request_group
+  - _id: req_031a5a8c909a4fb1a2a9d4de5363c396
+    parentId: fld_35e40795262f4f24a6a24c8fab4f30ec
+    modified: 1617350347677
+    created: 1614833151498
+    url: "{{ _.baseUrl }}/roles"
+    name: listAll
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613835444312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1ac42d49430c4055ab66ce137d1d3a87
+    parentId: fld_35e40795262f4f24a6a24c8fab4f30ec
+    modified: 1620180293612
+    created: 1617847648802
+    url: "{{ _.baseUrl }}/roles/6"
+    name: delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613337277943
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_27f313a57e4549afb21371f775595055
+    parentId: fld_35e40795262f4f24a6a24c8fab4f30ec
+    modified: 1617855688897
+    created: 1617852086469
+    url: "{{ _.baseUrl }}/roles/3"
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "USER",
+        	"description": "usuário comum"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_dc858f782eda49689a2ffd69db51d9c6
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1613088194758.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_885f3e8ec3b646c184aae29e932df55f
+    parentId: fld_d28592d05c464d649d21380b6c374876
+    modified: 1617347244970
+    created: 1612839111574
+    url: "{{ _.baseUrl }}/users/register"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "makusdouglas@email.com",
+        	"password": "password",
+        	"firstname": "markus douglas nascimento",
+        	"lastname": "siqueira",
+        	"birth": "1997-04-20"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_aa32b73f2b98402cb4afed6c9906f2f1
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612839111574
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_d28592d05c464d649d21380b6c374876
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1612839103222
+    created: 1612839103222
+    name: Users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1612839103222
+    _type: request_group
+  - _id: req_a07c6167b0c34cf895cf0759fcdf6be2
+    parentId: fld_d28592d05c464d649d21380b6c374876
+    modified: 1618613341972
+    created: 1612839148399
+    url: "{{ _.baseUrl }}/users/me"
+    name: listOne
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612668695994.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_25c65459d3254ee1a4f5cb0853969e41
+    parentId: fld_d28592d05c464d649d21380b6c374876
+    modified: 1612839220783
+    created: 1612839212657
+    url: "{{ _.baseUrl }}/users"
+    name: listAll
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612583488204.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3f176a96cb5a46bab54d6f9a44e641cb
+    parentId: fld_d28592d05c464d649d21380b6c374876
+    modified: 1612842554203
+    created: 1612839237146
+    url: "{{ _.baseUrl }}/users/417cc665-bbfc-4393-828c-bdc8cab8dae1"
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612540884309.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_52a700ca9356464fa42c2953abd3d158
+    parentId: fld_d28592d05c464d649d21380b6c374876
+    modified: 1612846809032
+    created: 1612839271803
+    url: "{{ _.baseUrl }}/users/b24f3137-bbec-4ef3-b1b1-f2e2eac121d1"
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "makusdouglas@gmail.com.brbr",
+        	"firstname": "markus douglas nascimento",
+        	"lastname": "siqueira",
+        	"birth": "1997-04-20"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4c38e6204867478985dd4b8b2da2cba1
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1612519582362.4375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_b9460bc0b395e6eded9c41f274e78b21d2c92c1e
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1620271266678
+    created: 1612839067427
+    name: Base Environment
+    data:
+      baseUrl: http://localhost:3333
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYzFjMmM4YS03MTIxLTRhZjQtOTA2YS1kMThmNWYwNzg2M2EiLCJyb2xlIjpbeyJpZCI6MSwibmFtZSI6IkFETUlOIiwiZGVzY3JpcHRpb24iOiJ1c2VyIHdpdGggZ3JhbnRzIGxldmVsIGFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMS0wNC0wMlQwNToyMzoxMi45NDBaIiwidXBkYXRlZEF0IjoiMjAyMS0wNC0wMlQwNToyMzoxMi45NDBaIn0seyJpZCI6MiwibmFtZSI6IlVTRVIiLCJkZXNjcmlwdGlvbiI6InVzdcOhcmlvIGNvbXVtIiwiY3JlYXRlZEF0IjoiMjAyMS0wNC0wN1QwMDowOTozNy44OTVaIiwidXBkYXRlZEF0IjoiMjAyMS0wNC0wOFQwNDoyMDo0My4wMDBaIn1dLCJpYXQiOjE2MjAyNzEyMzAsImV4cCI6MTYyMDI5MjgzMH0.XkHQi6G1D6Akjjwaf83nJP7OX-wNxedYTiU0IBlUfsI
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+        - token
+    color: null
+    isPrivate: false
+    metaSortKey: 1612839067427
+    _type: environment
+  - _id: jar_b9460bc0b395e6eded9c41f274e78b21d2c92c1e
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1612839067428
+    created: 1612839067428
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_fc0413ab2f464a668d72db2274e238e2
+    parentId: wrk_48cfa42919a84731895390dd3672e167
+    modified: 1612839067398
+    created: 1612839067398
+    fileName: APP_ESTOQUE TypeOrm
+    contents: ""
+    contentType: yaml
+    _type: api_spec

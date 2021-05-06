@@ -10,4 +10,9 @@ roleRouter.get('/', RolesController._show);
 roleRouter.patch('/:id', RolesController._update);
 roleRouter.delete('/:id', RolesController._destroy);
 
+// ROLE > PERMISSION
+
+roleRouter.post('/:id/permission/:perm_id');
+roleRouter.delete('/:id/permission/:perm_id');
+
 export default roleRouter;

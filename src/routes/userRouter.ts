@@ -15,7 +15,7 @@ userRouter.delete('/:id', UsersController.remove);
 
 // User -> Role
 
-userRouter.post('/:id/role', UserRolesController._create);
-userRouter.delete('/:id/role', UserRolesController._destroy);
+userRouter.post('/:id/role/:role_id', UserRolesController._create);
+userRouter.delete('/:id/role/:role_id', UserRolesController._destroy);
 
 export default userRouter;

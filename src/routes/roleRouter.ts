@@ -1,4 +1,5 @@
 import RolesController from '@controllers/RolesController';
+import RolesPermissionController from '@controllers/RolesPermissionController';
 import AuthenticationStore from '@middlewares/Authentication';
 import { Router } from 'express';
 const roleRouter = Router();
@@ -12,7 +13,7 @@ roleRouter.delete('/:id', RolesController._destroy);
 
 // ROLE > PERMISSION
 
-roleRouter.post('/:id/permission/:perm_id');
+roleRouter.post('/:id/permission/:perm_id', RolesPermissionController._create);
 roleRouter.delete('/:id/permission/:perm_id');
 
 export default roleRouter;

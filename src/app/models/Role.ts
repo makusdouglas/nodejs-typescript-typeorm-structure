@@ -1,5 +1,6 @@
 import { IsLowercase, IsNotEmpty, IsUppercase } from 'class-validator';
 import {
+  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
@@ -11,7 +12,7 @@ import {
 import Permission from './Permission';
 
 @Entity('Role')
-class Role {
+class Role extends BaseEntity {
   @PrimaryGeneratedColumn({
     type: 'integer',
   })

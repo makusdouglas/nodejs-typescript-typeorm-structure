@@ -6,9 +6,9 @@ module.exports={
     "type": "mysql",
     "host": process.env.MYSQL_HOST,
     "port":  3306,
-    "username": process.env.MYSQL_USER,
-    "password": process.env.MYSQL_PASS,
-    "database": process.env.MYSQL_DB,
+    "username": process.env.MYSQL_USER || 'root',
+    "password": process.env.MYSQL_PASS || 'root',
+    "database": process.env.MYSQL_DB || 'STORE_APP',
     "connectionTimeout": 30000,
     "logging": false,
     "entities": [

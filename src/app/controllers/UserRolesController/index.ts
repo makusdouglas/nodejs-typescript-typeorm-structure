@@ -8,8 +8,7 @@ import { getRepository } from 'typeorm';
 class UserRolesController extends AbstractController {
   async _index(req: Request, res: Response): Promise<Response | void> {}
   async _create(req: Request, res: Response) {
-    const { id } = req.params;
-    const { role_id } = req.params;
+    const { id, role_id } = req.params;
 
     if (!role_id) {
       return res.status(400).json({
